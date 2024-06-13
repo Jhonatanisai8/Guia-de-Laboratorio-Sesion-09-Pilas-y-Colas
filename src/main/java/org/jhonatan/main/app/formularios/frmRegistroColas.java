@@ -82,6 +82,19 @@ public class frmRegistroColas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, datos, "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
     }
 
+    private void enColar(String cod, String nom, String ape, String sex,
+            float suel) {
+        Nodo nuevo = new Nodo(cod, nom, ape, sex, suel);
+        if (frente == null) {
+            frente = nuevo;
+        } else {
+            finCola.sig = nuevo;
+        }
+        finCola = nuevo;
+        finCola.sig = null;
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
