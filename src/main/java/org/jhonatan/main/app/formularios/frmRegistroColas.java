@@ -131,6 +131,14 @@ public class frmRegistroColas extends javax.swing.JFrame {
         txtCodigo.requestFocus();
     }
 
+    private void vaciarTabla() {
+        // obtenemos el numero de filas de la tabla
+        int filas = tblDatos1.getRowCount();
+        for (int i = 0; i < filas; i++) {
+            miModelo.removeRow(0);
+        }
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
