@@ -1,5 +1,7 @@
 package org.jhonatan.main.app;
 
+import org.jhonatan.main.app.formularios.frmRegistrosPilas;
+
 /**
  *
  * @author Jhonatan
@@ -7,6 +9,11 @@ package org.jhonatan.main.app;
 public class Sesion09RegistroEmpleados {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        formularioPilas();
+    }
+
+    public static void formularioPilas() {
+        frmRegistrosPilas d = new frmRegistrosPilas();
+        d.setVisible(true);
     }
 }
