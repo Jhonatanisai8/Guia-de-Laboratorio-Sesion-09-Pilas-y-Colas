@@ -673,7 +673,29 @@ public class frmRegistroColas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnRestaurarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
-
+        String cod;
+        cod = txtCodigo.getText();
+        if (cod.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor ingresar el código a buscar", "ATENCIÓN",
+                    JOptionPane.WARNING_MESSAGE);
+        } else {
+            // llamando a la funcion que retorna la posicion del dato buscado
+            pFound = buscar(finCola, cod);
+            if (pFound != null) {
+                txtNombres.setText(pFound.nombre);
+                txtApellidos.setText(pFound.apellidos);
+                if (pFound.sexo.equalsIgnoreCase("masculino")) {
+                    cbxSexo.setSelectedIndex(1);
+                } else {
+                    cbxSexo.setSelectedIndex(2);
+                }
+                txtSueldo.setText(pFound.sueldo + "");
+                habilitar();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "El empleado con código " + cod + ", no esta el Lista",
+                        "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+            }
+        }
     }// GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
