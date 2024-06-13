@@ -92,4 +92,15 @@ public class Pila {
             miModelo.removeRow(0);
         }
     }
+
+    private int numElemen() {
+        int num = 0;
+        Nodo aux = tope;
+        while (aux != null) {
+            num++;
+            aux = aux.sig;
+        }
+        return num;
+    }
+
 }
