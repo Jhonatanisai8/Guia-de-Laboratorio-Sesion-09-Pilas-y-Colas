@@ -681,7 +681,20 @@ public class frmRegistroColas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEliminarActionPerformed
-
+        if (frente == null) {
+            JOptionPane.showMessageDialog(rootPane, "La cola esta vaía", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+            txtCodigo.requestFocus();
+        } else {
+            String dato = frente();
+            mensaje(dato);
+            verDatos();
+            limpiarEntradas();
+            if (frente == null) {
+                JOptionPane.showMessageDialog(rootPane, "La cola esta vaía", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+            }
+            desahabilitar();
+            resumen();
+        }
     }// GEN-LAST:event_btnEliminarActionPerformed
 
     /**
