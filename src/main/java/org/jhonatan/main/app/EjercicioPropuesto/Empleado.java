@@ -129,4 +129,9 @@ public class Empleado {
         return monto;
     }
 
+    // metodo para saber el suedo neto
+    public float montoSueldoNeto() {
+        return (this.sueldoBase + this.montoComision()) - this.montoDescuentoImpuesto() - this.montoDescuentoSeguro();
+    }
+
 }
