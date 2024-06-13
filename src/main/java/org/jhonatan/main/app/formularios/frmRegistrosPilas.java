@@ -8,9 +8,17 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOc
  */
 public class frmRegistrosPilas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmRegistrosPilas
-     */
+    //declaracion de la pila
+    public class Nodo {
+
+        String codigo;
+        String nombre;
+        String apellidos;
+        String sexo;
+        float sueldo;
+        Nodo sig;
+    }
+
     public frmRegistrosPilas() {
         initComponents();
         FlatMaterialDeepOceanIJTheme.setup();
@@ -380,27 +388,27 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardaeActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnGuardaeActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaurarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnRestaurarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
