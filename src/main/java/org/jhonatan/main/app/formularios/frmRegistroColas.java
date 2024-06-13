@@ -35,7 +35,11 @@ public class frmRegistroColas extends javax.swing.JFrame {
     DefaultTableModel miModelo;
     String cabezera[] = { "Nº", "Código", "Nombres", "Apellidos", "Sexo", "Sueldo" };
     String data[][] = {};
-    
+    // declarion de variable locales
+    public Nodo frente, finCola;
+    public Nodo pFound;
+    int num = 0, tam;
+
     public frmRegistroColas() {
         initComponents();
         FlatMaterialDeepOceanIJTheme.setup();
