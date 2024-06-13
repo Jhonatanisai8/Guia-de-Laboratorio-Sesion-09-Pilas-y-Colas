@@ -165,7 +165,31 @@ public class frmRegistroColas extends javax.swing.JFrame {
         txtTamanio.setText(num + "");
     }
 
-    
+    private void resumen() {
+        String nom = "", acum = "";
+        float suma = 0, mayor = -9999;
+        float s;
+        Nodo p = frente;
+        while (p != null) {
+            s = p.sueldo;
+            if (s > mayor) {
+                mayor = s;
+                nom = p.nombre + " " + p.apellidos;
+            }
+            suma = suma + s;
+            p = p.sig;
+        }
+
+        // colocando al informacion el los campos de textos
+        txtEmpleadoMayorSueldo.setText(nom);
+
+        // dandole formato al acumulado
+        DecimalFormat dfs = new DecimalFormat("####.00");
+        acum = dfs.format(suma);
+        txtMontoAcumulado.setText(acum);
+
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
