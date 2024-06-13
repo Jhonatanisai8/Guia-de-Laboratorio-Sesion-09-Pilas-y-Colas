@@ -1,5 +1,6 @@
 package org.jhonatan.main.app.formularios;
 
+import java.text.DecimalFormat;
 import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
@@ -137,6 +138,31 @@ public class frmRegistroColas extends javax.swing.JFrame {
         for (int i = 0; i < filas; i++) {
             miModelo.removeRow(0);
         }
+    }
+
+    private void verDatos() {
+        // variables para recorrer la lista
+        String cod, nom, ape, se, su;
+        Nodo aux = frente;
+        vaciarTabla();
+        num = 0;
+
+        while (aux != null) {
+            cod = aux.codigo;
+            nom = aux.nombre;
+            ape = aux.apellidos;
+            se = aux.sexo;
+
+            // dando formato al sueldo
+            DecimalFormat df2 = new DecimalFormat("####.00");
+            su = df2.format(aux.sueldo);
+            num++;
+            Object[] fila = { num, cod, nom, ape, se, su };
+            miModelo.addRow(fila);
+            aux = aux.sig;
+        }
+
+        txtTamanio.setText(num + "");
     }
 
     
