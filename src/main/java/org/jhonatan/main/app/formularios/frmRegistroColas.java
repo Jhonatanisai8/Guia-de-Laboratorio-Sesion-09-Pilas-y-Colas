@@ -110,8 +110,17 @@ public class frmRegistroColas extends javax.swing.JFrame {
         return eliminado;
     }
 
-    
+    private void habilitar() {
+        btnActualizar.setEnabled(true);
+        btnGuardae.setEnabled(false);
+    }
+
+    private void desahabilitar(){
+        btnActualizar.setEnabled(false);
+        btnGuardae.setEnabled(true);
+
     @SuppressWarnings("unchecked")
+   
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
