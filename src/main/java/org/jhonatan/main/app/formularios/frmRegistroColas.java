@@ -115,12 +115,24 @@ public class frmRegistroColas extends javax.swing.JFrame {
         btnGuardae.setEnabled(false);
     }
 
-    private void desahabilitar(){
+    private void desahabilitar() {
         btnActualizar.setEnabled(false);
-        btnGuardae.setEnabled(true);
+        btnGuardae.setEnabled();
+    }
 
+    private void limpiarEntradas() {
+        String m = "";
+        txtCodigo.setText(m);
+        txtNombres.setText(m);
+        txtApellidos.setText(m);
+        cbxSexo.setSelectedIndex(0);
+        txtSueldo.setText(m);
+
+        txtCodigo.requestFocus();
+    }
+
+    
     @SuppressWarnings("unchecked")
-   
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
