@@ -50,6 +50,18 @@ public class frmRegistroColas extends javax.swing.JFrame {
         tblDatos1.setModel(miModelo);
     }
 
+    // métodos
+    private Nodo buscar(Nodo tope, String cod) {
+        Nodo pos = frente;
+        // recorriendo la lista para encontrar la informacion
+        while (pos != null && !cod.equalsIgnoreCase(pos.codigo)) {
+            pos = pos.sig;
+        }
+        // retornamos la posicion
+        return pos;
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
