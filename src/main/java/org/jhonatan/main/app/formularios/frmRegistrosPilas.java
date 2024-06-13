@@ -1,5 +1,8 @@
 package org.jhonatan.main.app.formularios;
 
+import javax.crypto.KEM;
+import javax.swing.table.DefaultTableModel;
+
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOceanIJTheme;
 
 /**
@@ -25,14 +28,26 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             sueldo = suel;
             sig = null;
         }
-
-        
     }
+
+    // declarion del formato de la tabla
+    DefaultTableModel miModelo;
+    String cabezera[] = { "Nº", "Código", "Nombres", "Apellidos", "Sexo", "Sueldo" };
+    String data[][] = {};
+
+    // declarion de variables locales
+    public Nodo tope;
+    public Nodo pFound;
+    int num = 0;
 
     public frmRegistrosPilas() {
         initComponents();
         FlatMaterialDeepOceanIJTheme.setup();
         this.setTitle("Bienvenido al Sistema");
+        tope = null;
+        // iniciaando la tabla
+        miModelo = new DefaultTableModel(data, cabezera);
+        tblDatos1.setModel(miModelo);
     }
 
     /**
