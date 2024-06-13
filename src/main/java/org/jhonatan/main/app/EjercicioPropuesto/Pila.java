@@ -61,4 +61,26 @@ public class Pila {
         }
         tope = nuevo;
     }
+
+    public String pop() {
+        String eliminado = "";
+        Nodo aux = tope;
+        // extraemos los datos
+        // atributos
+        String nombre = aux.getEmpleado().getNombre();
+        String aPaterno = aux.getEmpleado().getaPaterno();
+        String aMaterno = aux.getEmpleado().getaMaterno();
+        float sueldoBase = aux.getEmpleado().getSueldoBase();
+        int ventasRelizadas = aux.getEmpleado().getVentasRelizadas();
+        String estadoCivil = aux.getEmpleado().getEstadoCivil();
+        int numeroHijos = aux.getEmpleado().getNumeroHijos();
+        float sueldoNeto = aux.getEmpleado().getSueldoNeto();
+
+        eliminado = nombre + "," + aPaterno + "," + aMaterno + "," + String.valueOf(sueldoBase) + ","
+                + String.valueOf(ventasRelizadas) +
+                "," + estadoCivil + "," + String.valueOf(numeroHijos) + "," + String.valueOf(sueldoNeto);
+        tope = tope.sig;
+        aux.sig = null;
+        return eliminado;
+    }
 }
