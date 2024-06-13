@@ -1,6 +1,9 @@
 package org.jhonatan.main.app.formularios;
 
+import java.util.StringTokenizer;
+
 import javax.crypto.KEM;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOceanIJTheme;
@@ -60,6 +63,24 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
 
         // retorno de la posicion del dato
         return pos;
+    }
+
+    private void mensaje(String data) {
+        StringTokenizer st = new StringTokenizer(data, "");
+        String c = st.nextToken();
+        String n = st.nextToken();
+        String a = st.nextToken();
+        String s = st.nextToken();
+        String su = st.nextToken();
+
+        String datos = "Descripción el dato Eliminado: \n" +
+                "Codigo:    " + c + "\n" +
+                "Nombre:    " + n + "\n" +
+                "Apellidos: " + a + "\n" +
+                "Sexo:      " + s + "\n" +
+                "Sueldo:    " + su + "\n";
+
+        JOptionPane.showMessageDialog(rootPane, datos, "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
     }
 
     /**
