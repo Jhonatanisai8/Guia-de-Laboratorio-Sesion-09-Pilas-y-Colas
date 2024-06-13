@@ -15,6 +15,18 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         String sexo;
         float sueldo;
         Nodo sig;
+
+        // constructor
+        public Nodo(String cod, String nom, String ape, String sex, float suel) {
+            codigo = cod;
+            nombre = nom;
+            apellidos = ape;
+            sexo = sex;
+            sueldo = suel;
+            sig = null;
+        }
+
+        
     }
 
     public frmRegistrosPilas() {
