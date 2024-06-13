@@ -118,7 +118,7 @@ public class frmRegistroColas extends javax.swing.JFrame {
 
     private void desahabilitar() {
         btnActualizar.setEnabled(false);
-        btnGuardae.setEnabled();
+        btnGuardae.setEnabled(true);
     }
 
     private void limpiarEntradas() {
@@ -651,7 +651,7 @@ public class frmRegistroColas extends javax.swing.JFrame {
         limpiarEntradas();
         verDatos();
         resumen();
-    
+
     }// GEN-LAST:event_btnGuardaeActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
