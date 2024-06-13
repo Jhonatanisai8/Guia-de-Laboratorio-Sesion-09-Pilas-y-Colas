@@ -94,6 +94,22 @@ public class frmRegistroColas extends javax.swing.JFrame {
         finCola.sig = null;
     }
 
+    private String frente() {
+        String eliminado = "";
+        // extrayendo los datos a ser eliminados
+        Nodo aux = frente;
+        String c = aux.codigo;
+        String n = aux.nombre;
+        String a = aux.apellidos;
+        String s = aux.sexo;
+        float su = aux.sueldo;
+
+        eliminado = c + "," + n + "," + a + "," + s + "," + String.valueOf(su);
+        // cambiando la referencia del frente
+        frente = frente.sig;
+        return eliminado;
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
