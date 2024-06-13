@@ -57,6 +57,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(180, 168, 168));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de Empleados:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 15), new java.awt.Color(0, 0, 0))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("OCR A Extended", 0, 15)); // NOI18N
@@ -108,7 +109,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -148,6 +149,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
+        jPanel5.setBackground(new java.awt.Color(180, 168, 168));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Empleados Registrados:"));
 
         tblDatos1.setModel(new javax.swing.table.DefaultTableModel(
@@ -175,6 +177,8 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 9, Short.MAX_VALUE))
         );
+
+        jPanel6.setBackground(new java.awt.Color(180, 168, 168));
 
         jLabel6.setText("Empleado con el mayor Sueldo:");
 
@@ -235,7 +239,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        btnGuardae.setBackground(new java.awt.Color(199, 23, 29));
+        btnGuardae.setBackground(new java.awt.Color(153, 153, 153));
         btnGuardae.setFont(new java.awt.Font("Vensim Sans KR", 1, 12)); // NOI18N
         btnGuardae.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/registrar.png"))); // NOI18N
         btnGuardae.setText("Guardar");
@@ -245,7 +249,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             }
         });
 
-        btnActualizar.setBackground(new java.awt.Color(199, 23, 29));
+        btnActualizar.setBackground(new java.awt.Color(153, 153, 153));
         btnActualizar.setFont(new java.awt.Font("Vensim Sans KR", 1, 12)); // NOI18N
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/actualizar.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
@@ -255,7 +259,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             }
         });
 
-        btnRestaurar.setBackground(new java.awt.Color(199, 23, 29));
+        btnRestaurar.setBackground(new java.awt.Color(153, 153, 153));
         btnRestaurar.setFont(new java.awt.Font("Vensim Sans KR", 1, 12)); // NOI18N
         btnRestaurar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/restaurar.png"))); // NOI18N
         btnRestaurar.setText("Restaurar");
@@ -265,7 +269,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             }
         });
 
-        btnConsultar.setBackground(new java.awt.Color(199, 23, 29));
+        btnConsultar.setBackground(new java.awt.Color(153, 153, 153));
         btnConsultar.setFont(new java.awt.Font("Vensim Sans KR", 1, 12)); // NOI18N
         btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/consultar.png"))); // NOI18N
         btnConsultar.setText("Consultar");
@@ -275,7 +279,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             }
         });
 
-        btnSalir.setBackground(new java.awt.Color(199, 23, 29));
+        btnSalir.setBackground(new java.awt.Color(153, 153, 153));
         btnSalir.setFont(new java.awt.Font("Vensim Sans KR", 1, 12)); // NOI18N
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/cerrar.png"))); // NOI18N
         btnSalir.setText("Salir");
@@ -285,7 +289,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             }
         });
 
-        btnEliminar.setBackground(new java.awt.Color(199, 23, 29));
+        btnEliminar.setBackground(new java.awt.Color(153, 153, 153));
         btnEliminar.setFont(new java.awt.Font("Vensim Sans KR", 1, 12)); // NOI18N
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/quitar.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
