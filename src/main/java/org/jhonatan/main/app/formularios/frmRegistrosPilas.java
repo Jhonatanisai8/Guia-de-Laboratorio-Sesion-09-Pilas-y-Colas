@@ -175,6 +175,26 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         txtMontoAcumulado.setText(acum);
     }
 
+    private void habilitar() {
+        btnActualizar.setEnabled(true);
+        btnGuardae.setEnabled(false);
+    }
+
+    private void desahabilitar() {
+        btnActualizar.setEnabled(false);
+        btnGuardae.setEnabled(true);
+    }
+
+    private void limpiarEntradas() {
+        String m = "";
+        txtApellidos.setText(m);
+        txtCodigo.setText(m);
+        txtNombres.setText(m);
+        txtSueldo.setText(m);
+        cbxSexo.setSelectedIndex(0);
+        txtCodigo.requestFocus();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
