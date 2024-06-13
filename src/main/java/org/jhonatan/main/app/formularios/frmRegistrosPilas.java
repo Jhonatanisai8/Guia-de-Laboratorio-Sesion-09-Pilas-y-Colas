@@ -152,6 +152,29 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         }
     }
 
+    private void resumen() {
+        String nom = "", acum = "";
+        float suma = 0, mayor = -9999;
+        float s;
+        Nodo p = tope;
+        while (p != null) {
+            s = p.sueldo;
+            if (s > mayor) {
+                mayor = s;
+                nom = p.nombre + " " + p.apellidos;
+            }
+            suma = suma + s;
+            p = p.sig;
+        }
+
+        // colocando la informacion en los campos respectivos
+        txtEmpleadoMayorSueldo.setText(acum);
+        // dandole formato al documento
+        DecimalFormat df2 = new DecimalFormat("####.00");
+        acum = df2.format(suma);
+        txtMontoAcumulado.setText(acum);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
