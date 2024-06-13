@@ -15,19 +15,19 @@ public class Pila {
         this.tope = null;
     }
 
-    public Nodo buscar(Nodo tope,String nombres){
+    public Nodo buscar(Nodo tope, String nombres) {
         Nodo pos = tope;
-        while (pos != null !nombres.equalsIgnoreCase(pos.getEmpleado().getNombre())) {
+        while (pos != null && !nombres.equalsIgnoreCase(pos.getEmpleado().getNombre())) {
             pos = pos.sig;
         }
 
-        //retornamos la posicion
+        // retornamos la posicion
         return pos;
     }
 
-    public void mensaje(String data){
+    public void mensaje(String data) {
         StringTokenizer st = new StringTokenizer(data, ",");
-        //partiendo el texto
+        // partiendo el texto
         String nombre = st.nextToken();
         String aPaterno = st.nextToken();
         String aMaterno = st.nextToken();
@@ -37,18 +37,28 @@ public class Pila {
         String numHijos = st.nextToken();
         String sueldoNeto = st.nextToken();
 
-        String datos =  "Descripcion del dato Eliminado: \n"+
-        "Nombres:       "+nombre+"\n"+
-        "Ap. Paterno:   "+aPaterno+"\n"+
-        "Ap. Materno:   "+aMaterno+"\n"+
-        "Sueldo Base:   "+sueldoBase+"\n"+
-        "Ven.Realizadas:"+ventasRealizadas+"\n"+
-        "Estado Civil:  "+estadoCivil+"\n"+
-        "Nº de hijos:   "+numHijos+"\n"+
-        "Sueldo Neto:   "+sueldoNeto+"\n";
+        String datos = "Descripcion del dato Eliminado: \n" +
+                "Nombres:       " + nombre + "\n" +
+                "Ap. Paterno:   " + aPaterno + "\n" +
+                "Ap. Materno:   " + aMaterno + "\n" +
+                "Sueldo Base:   " + sueldoBase + "\n" +
+                "Ven.Realizadas:" + ventasRealizadas + "\n" +
+                "Estado Civil:  " + estadoCivil + "\n" +
+                "Nº de hijos:   " + numHijos + "\n" +
+                "Sueldo Neto:   " + sueldoNeto + "\n";
 
-        JOptionPane.showMessageDialog(null, datos,"ATENCIÓN",JOptionPane.INFORMATION_MESSAGE);
-        
+        JOptionPane.showMessageDialog(null, datos, "ATENCIÓN", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
+    public void push(Empleado empleado) {
+        Nodo nuevo = new Nodo(empleado);
+        // realizando los enlaces correspondientes
+        if (tope == null) {
+            nuevo.sig = null;
+        } else {
+            nuevo.sig = tope;
+        }
+        tope = nuevo;
+    }
 }
