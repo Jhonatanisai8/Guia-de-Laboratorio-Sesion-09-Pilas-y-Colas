@@ -83,6 +83,17 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, datos, "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
     }
 
+    private void push(String cod, String nom, String ape, String sex, float suel) {
+        Nodo nuevo = new Nodo(cod, nom, ape, sex, suel);
+        // reliamos los enlaces correspondientes
+        if (tope == null) {
+            nuevo.sig = null;
+        } else {
+            nuevo.sig = tope;
+        }
+        tope = nuevo;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
