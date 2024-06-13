@@ -3,7 +3,6 @@ package org.jhonatan.main.app.formularios;
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;
 
-import javax.crypto.KEM;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,6 +15,7 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOc
 public class frmRegistrosPilas extends javax.swing.JFrame {
 
     public class Nodo {
+
         String codigo;
         String nombre;
         String apellidos;
@@ -36,7 +36,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
 
     // declarion del formato de la tabla
     DefaultTableModel miModelo;
-    String cabezera[] = { "Nº", "Código", "Nombres", "Apellidos", "Sexo", "Sueldo" };
+    String cabezera[] = {"Nº", "Código", "Nombres", "Apellidos", "Sexo", "Sueldo"};
     String data[][] = {};
 
     // declarion de variables locales
@@ -74,12 +74,12 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         String s = st.nextToken();
         String su = st.nextToken();
 
-        String datos = "Descripción el dato Eliminado: \n" +
-                "Codigo:    " + c + "\n" +
-                "Nombre:    " + n + "\n" +
-                "Apellidos: " + a + "\n" +
-                "Sexo:      " + s + "\n" +
-                "Sueldo:    " + su + "\n";
+        String datos = "Descripción el dato Eliminado: \n"
+                + "Codigo:    " + c + "\n"
+                + "Nombre:    " + n + "\n"
+                + "Apellidos: " + a + "\n"
+                + "Sexo:      " + s + "\n"
+                + "Sueldo:    " + su + "\n";
 
         JOptionPane.showMessageDialog(rootPane, datos, "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
     }
@@ -144,7 +144,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             // dando formato al sueldo
             DecimalFormat df2 = new DecimalFormat("####.00");
             su = df2.format(aux.sueldo);
-            Object fila[] = { num, cod, nom, ape, se, su };
+            Object fila[] = {num, cod, nom, ape, se, su};
             num--;
             miModelo.addRow(fila);
             aux = aux.sig;
@@ -172,7 +172,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         // dandole formato al documento
         DecimalFormat df2 = new DecimalFormat("####.00");
         acum = df2.format(suma);
-        txtMontoAcumulado.setText(acum);
+        txtMontoAcumulado.setText("S/." + acum);
     }
 
     private void habilitar() {
