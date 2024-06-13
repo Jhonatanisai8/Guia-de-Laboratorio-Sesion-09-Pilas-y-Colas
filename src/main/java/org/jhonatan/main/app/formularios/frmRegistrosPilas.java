@@ -67,7 +67,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }
 
     private void mensaje(String data) {
-        StringTokenizer st = new StringTokenizer(data, "");
+        StringTokenizer st = new StringTokenizer(data, ",");
         String c = st.nextToken();
         String n = st.nextToken();
         String a = st.nextToken();
@@ -631,7 +631,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnGuardaeActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
-        // colocando la informacion en el puntero  pFound
+        // colocando la informacion en el puntero pFound
         pFound.codigo = txtCodigo.getText();
         pFound.nombre = txtNombres.getText();
         pFound.apellidos = txtApellidos.getText();
@@ -642,7 +642,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         desahabilitar();
         verDatos();
         resumen();
-    
+
     }// GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnRestaurarActionPerformed
@@ -684,7 +684,20 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEliminarActionPerformed
-
+        if (tope == null) {
+            JOptionPane.showMessageDialog(rootPane, "La pila esta vacia", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+            txtCodigo.requestFocus();
+        } else {
+            String dato = pop();
+            mensaje(dato);
+            limpiarEntradas();
+            verDatos();
+            if (tope == null) {
+                JOptionPane.showMessageDialog(rootPane, "La pila esta vacia", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+            }
+            desahabilitar();
+            resumen();
+        }
     }// GEN-LAST:event_btnEliminarActionPerformed
 
     /**
