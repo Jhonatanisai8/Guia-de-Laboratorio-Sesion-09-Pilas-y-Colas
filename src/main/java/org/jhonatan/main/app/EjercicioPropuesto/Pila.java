@@ -3,6 +3,8 @@ package org.jhonatan.main.app.EjercicioPropuesto;
 import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Pila {
     // variables
@@ -82,5 +84,12 @@ public class Pila {
         tope = tope.sig;
         aux.sig = null;
         return eliminado;
+    }
+
+    public void vaciarTabla(JTable tblDatos, DefaultTableModel miModelo) {
+        int filas = tblDatos.getRowCount();
+        for (int i = 0; i < filas; i++) {
+            miModelo.removeRow(0);
+        }
     }
 }
