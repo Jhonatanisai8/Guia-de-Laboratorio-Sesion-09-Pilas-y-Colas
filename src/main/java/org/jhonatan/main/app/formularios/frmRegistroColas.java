@@ -669,7 +669,8 @@ public class frmRegistroColas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnRestaurarActionPerformed
-
+        limpiarEntradas();
+        desahabilitar();
     }// GEN-LAST:event_btnRestaurarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
