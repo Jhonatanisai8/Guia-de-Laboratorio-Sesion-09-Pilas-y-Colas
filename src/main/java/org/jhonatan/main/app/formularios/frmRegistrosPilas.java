@@ -94,6 +94,23 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         tope = nuevo;
     }
 
+    private String pop() {
+        String eliminado = "";
+        Nodo aux = tope;
+        // extrayendo los datos a ser eliminados
+        String c = aux.codigo;
+        String n = aux.nombre;
+        String a = aux.apellidos;
+        String s = aux.sexo;
+        float su = aux.sueldo;
+
+        eliminado = c + "," + n + "," + a + "," + s + "," + String.valueOf(su);
+        tope = tope.sig;
+        aux.sig = null;
+        return eliminado;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
