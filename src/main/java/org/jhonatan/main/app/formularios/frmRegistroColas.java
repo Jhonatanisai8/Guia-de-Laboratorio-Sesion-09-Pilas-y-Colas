@@ -638,7 +638,20 @@ public class frmRegistroColas extends javax.swing.JFrame {
     }// GEN-LAST:event_txtTamanioActionPerformed
 
     private void btnGuardaeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGuardaeActionPerformed
+        // capturando la informacion de los objetos
+        String cod = txtCodigo.getText();
+        String nom = txtNombres.getText();
+        String ape = txtApellidos.getText();
+        String sex = cbxSexo.getSelectedItem().toString();
+        float suel = Float.parseFloat(txtSueldo.getText());
 
+        // creando el nodo de la lista en memoria y colocando la informacion
+        enColar(cod, nom, ape, sex, suel);
+        tam++;
+        limpiarEntradas();
+        verDatos();
+        resumen();
+    
     }// GEN-LAST:event_btnGuardaeActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
