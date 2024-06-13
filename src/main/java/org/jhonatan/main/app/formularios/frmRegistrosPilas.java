@@ -1,5 +1,6 @@
 package org.jhonatan.main.app.formularios;
 
+import java.text.DecimalFormat;
 import java.util.StringTokenizer;
 
 import javax.crypto.KEM;
@@ -110,14 +111,6 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         return eliminado;
     }
 
-    private void vaciarTabla() {
-        // obteniendo el numero de filas de la tabla
-        int fila = tblDatos1.getRowCount();
-        for (int index = 0; index < fila; index++) {
-            miModelo.removeRow(0);
-        }
-    }
-
     private int numElemen() {
         int num = 0;
         Nodo aux = tope;
@@ -126,6 +119,37 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
             aux = aux.sig;
         }
         return num;
+    }
+
+    private void vaciarTabla() {
+        // obteniendo el numero de filas de la tabla
+        int fila = tblDatos1.getRowCount();
+        for (int index = 0; index < fila; index++) {
+            miModelo.removeRow(0);
+        }
+    }
+
+    private void verDatos() {
+        // variables a utilizar
+        String cod, nom, ape, se, su;
+        Nodo aux = tope;
+        vaciarTabla();
+        Nodo p;
+        num = numElemen();
+        while (aux != null) {
+            cod = aux.codigo;
+            nom = aux.nombre;
+            ape = aux.apellidos;
+            se = aux.sexo;
+            // dando formato al sueldo
+            DecimalFormat df2 = new DecimalFormat("####.00");
+            su = df2.format(aux.sueldo);
+            Object fila[] = { num, cod, nom, ape, se, su };
+            num--;
+            miModelo.addRow(fila);
+            aux = aux.sig;
+
+        }
     }
 
     /**
