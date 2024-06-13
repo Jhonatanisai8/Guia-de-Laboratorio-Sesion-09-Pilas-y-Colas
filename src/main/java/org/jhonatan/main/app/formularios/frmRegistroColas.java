@@ -1,5 +1,8 @@
 package org.jhonatan.main.app.formularios;
 
+import java.util.StringTokenizer;
+
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOceanIJTheme;
@@ -61,7 +64,24 @@ public class frmRegistroColas extends javax.swing.JFrame {
         return pos;
     }
 
-    
+    private void mensaje(String data) {
+        StringTokenizer st = new StringTokenizer(data, ",");
+        // partiendo el texto
+        String c = st.nextToken();
+        String n = st.nextToken();
+        String a = st.nextToken();
+        String s = st.nextToken();
+        String su = st.nextToken();
+
+        String datos = "Descripción del dato eliminado: \n" +
+                "Código:    " + c + "\n" +
+                "Nombre:    " + n + "\n" +
+                "Apellidos: " + a + "\n" +
+                "Sexo:      " + s + "\n" +
+                "Sueldo:    " + su + "\n";
+        JOptionPane.showMessageDialog(rootPane, datos, "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
