@@ -186,7 +186,7 @@ public class frmRegistroColas extends javax.swing.JFrame {
         // dandole formato al acumulado
         DecimalFormat dfs = new DecimalFormat("####.00");
         acum = dfs.format(suma);
-        txtMontoAcumulado.setText(acum);
+        txtMontoAcumulado.setText("S/." + acum);
 
     }
 
