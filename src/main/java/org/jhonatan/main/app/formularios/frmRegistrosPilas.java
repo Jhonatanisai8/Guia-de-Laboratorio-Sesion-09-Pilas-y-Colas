@@ -646,7 +646,8 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnRestaurarActionPerformed
-
+        limpiarEntradas();
+        desahabilitar();
     }// GEN-LAST:event_btnRestaurarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
@@ -680,7 +681,11 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
-
+        int opcion = JOptionPane.showConfirmDialog(rootPane, "¿Estas seguro de Salir?", "ATENCIÓN",
+                JOptionPane.WARNING_MESSAGE);
+        if (opcion == 0) {
+            System.exit(0);
+        }
     }// GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEliminarActionPerformed
