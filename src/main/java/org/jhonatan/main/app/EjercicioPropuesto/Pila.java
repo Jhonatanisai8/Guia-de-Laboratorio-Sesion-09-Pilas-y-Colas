@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class Pila {
@@ -148,5 +149,27 @@ public class Pila {
             aux = aux.sig;
 
         }
+    }
+
+    public void resumen(JTextField txtMontoComisiones, JTextField txtmontoDescuentoImpuesto,
+            JTextField txtmontoDescuentoSeguro, JTextField txtMontoSueldos) {
+        float sumaSueldos = 0, sumaComisiones = 0, sumaDescImpuestos = 0, sumDescSeguro = 0;
+
+        Nodo p = tope;
+
+        while (p != null) {
+            sumaSueldos += p.getEmpleado().montoSueldoNeto();
+            sumaComisiones += p.getEmpleado().montoComision();
+            sumaDescImpuestos += p.getEmpleado().montoDescuentoImpuesto();
+            sumDescSeguro += p.getEmpleado().montoDescuentoSeguro();
+
+            p = p.sig;
+        }
+
+        DecimalFormat df2 = new DecimalFormat("####.00");
+        txtMontoComisiones.setText(df2.format(sumaComisiones));
+        txtmontoDescuentoImpuesto.setText(df2.format(sumaDescImpuestos));
+        txtMontoSueldos.setText(df2.format(sumaSueldos));
+        txtmontoDescuentoSeguro.setText(df2.format(sumDescSeguro));
     }
 }
