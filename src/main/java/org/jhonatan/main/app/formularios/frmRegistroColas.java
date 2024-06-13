@@ -44,6 +44,10 @@ public class frmRegistroColas extends javax.swing.JFrame {
         initComponents();
         FlatMaterialDeepOceanIJTheme.setup();
         this.setTitle("Bienvenido al Sistema");
+        finCola = null;
+        tam = 0;
+        miModelo = new DefaultTableModel(data, cabezera);
+        tblDatos1.setModel(miModelo);
     }
 
     @SuppressWarnings("unchecked")
