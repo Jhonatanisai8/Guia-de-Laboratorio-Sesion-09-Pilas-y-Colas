@@ -1,5 +1,7 @@
 package org.jhonatan.main.app.formularios;
 
+import javax.swing.table.DefaultTableModel;
+
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDeepOceanIJTheme;
 
 /**
@@ -29,6 +31,11 @@ public class frmRegistroColas extends javax.swing.JFrame {
         }
     }
 
+    // declaracion del formato de la tabla
+    DefaultTableModel miModelo;
+    String cabezera[] = { "Nº", "Código", "Nombres", "Apellidos", "Sexo", "Sueldo" };
+    String data[][] = {};
+    
     public frmRegistroColas() {
         initComponents();
         FlatMaterialDeepOceanIJTheme.setup();
