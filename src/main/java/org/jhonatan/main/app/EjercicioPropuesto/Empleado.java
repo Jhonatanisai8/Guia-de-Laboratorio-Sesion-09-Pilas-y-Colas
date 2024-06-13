@@ -86,6 +86,11 @@ public class Empleado {
         this.sueldoNeto = sueldoNeto;
     }
 
+    // metodo para calcular la comision
+    public float montoComision() {
+        return this.ventasRelizadas * 0.05f;
+    }
+
     
     
 }
