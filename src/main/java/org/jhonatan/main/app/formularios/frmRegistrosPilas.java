@@ -110,7 +110,15 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         return eliminado;
     }
 
-    
+    private void vaciarTabla(){
+        //obteniendo el numero de filas de la tabla
+        int fila = tblDatos1.getRowCount();
+        for (int index = 0; index < fila; index++) {
+            miModelo.removeRow(0);
+        }
+    }
+    //metodo para ver los datos en el jTable
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
