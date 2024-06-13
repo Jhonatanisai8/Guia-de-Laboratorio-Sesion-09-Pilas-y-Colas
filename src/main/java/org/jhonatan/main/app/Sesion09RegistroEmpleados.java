@@ -1,5 +1,6 @@
 package org.jhonatan.main.app;
 
+import org.jhonatan.main.app.formularios.frmRegistroColas;
 import org.jhonatan.main.app.formularios.frmRegistrosPilas;
 
 /**
@@ -9,11 +10,16 @@ import org.jhonatan.main.app.formularios.frmRegistrosPilas;
 public class Sesion09RegistroEmpleados {
 
     public static void main(String[] args) {
-        formularioPilas();
+        formularioColas();
     }
 
     public static void formularioPilas() {
         frmRegistrosPilas d = new frmRegistrosPilas();
+        d.setVisible(true);
+    }
+
+    public static void formularioColas() {
+        frmRegistroColas d = new frmRegistroColas();
         d.setVisible(true);
     }
 }
