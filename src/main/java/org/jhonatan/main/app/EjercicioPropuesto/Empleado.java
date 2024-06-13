@@ -94,18 +94,37 @@ public class Empleado {
     public float montoDescuentoSeguro() {
         float monto = 0;
 
-        //si esta soltero
+        // si esta soltero
         if (this.estadoCivil.equalsIgnoreCase("soltero")) {
             monto = 100;
         }
 
-        //si esta casado
+        // si esta casado
         if (this.estadoCivil.equalsIgnoreCase("casado")) {
             if (this.numeroHijos == 0) {
                 monto = 120;
             } else {
                 monto = 50 + (70 * this.numeroHijos);
             }
+        }
+        return monto;
+    }
+
+    private float ta() {
+        return this.sueldoBase + this.montoComision();
+    }
+
+    // metodo para el descuento por impuesto
+    public float montoDescuentoImpuesto() {
+        float monto = 0;
+        if (this.ta() > 0 && this.ta() < 1500) {
+            monto = 0;
+        } else if (this.ta() >= 1500 && this.ta() <= 2300) {
+            monto = this.ta() * 0.03f;
+        } else if (this.ta() >= 2301 && this.ta() <= 3000) {
+            monto = this.ta() * 0.04f;
+        } else if (this.ta() >= 3001) {
+            monto = this.ta() * 0.06f;
         }
         return monto;
     }
