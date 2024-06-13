@@ -91,6 +91,23 @@ public class Empleado {
         return this.ventasRelizadas * 0.05f;
     }
 
-    
-    
+    public float montoDescuentoSeguro() {
+        float monto = 0;
+
+        //si esta soltero
+        if (this.estadoCivil.equalsIgnoreCase("soltero")) {
+            monto = 100;
+        }
+
+        //si esta casado
+        if (this.estadoCivil.equalsIgnoreCase("casado")) {
+            if (this.numeroHijos == 0) {
+                monto = 120;
+            } else {
+                monto = 50 + (70 * this.numeroHijos);
+            }
+        }
+        return monto;
+    }
+
 }
