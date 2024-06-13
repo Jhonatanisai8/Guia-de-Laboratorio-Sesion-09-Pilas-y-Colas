@@ -642,7 +642,17 @@ public class frmRegistroColas extends javax.swing.JFrame {
     }// GEN-LAST:event_btnGuardaeActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
+        // colocando la informacion en el puntero pfound
+        pFound.codigo = txtCodigo.getText();
+        pFound.nombre = txtNombres.getText();
+        pFound.apellidos = txtApellidos.getText();
+        pFound.sexo = cbxSexo.getSelectedItem().toString();
+        pFound.sueldo = Float.parseFloat(txtSueldo.getText());
 
+        limpiarEntradas();
+        desahabilitar();
+        verDatos();
+        resumen();
     }// GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnRestaurarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnRestaurarActionPerformed
