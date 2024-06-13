@@ -50,6 +50,18 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         tblDatos1.setModel(miModelo);
     }
 
+    // metodos
+    private Nodo Buscar(Nodo tope, String codigo) {
+        Nodo pos = tope;
+        // recoriendo la lista para encontrar la informacion
+        while (pos != null && !codigo.equalsIgnoreCase(pos.codigo)) {
+            pos = pos.sig;
+        }
+
+        // retorno de la posicion del dato
+        return pos;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
