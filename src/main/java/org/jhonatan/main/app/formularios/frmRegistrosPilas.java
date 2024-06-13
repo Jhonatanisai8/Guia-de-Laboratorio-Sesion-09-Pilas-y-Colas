@@ -640,6 +640,32 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
 
+        String cod;
+        cod = txtCodigo.getText();
+        if (cod.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(rootPane, "Por favor ingresar el código a buscar", "ATENCIÓN",
+                    JOptionPane.WARNING_MESSAGE);
+        } else {
+            // llamando a la funcion que retorna la posicion del dato buscado
+            pFound = Buscar(tope, cod);
+            // verificando el puntero pfound para mostrar la informacion buscada
+            if (pFound != null) {
+                // mostramos la inf. en las cajas de entrada
+                txtNombres.setText(pFound.nombre);
+                txtApellidos.setText(pFound.apellidos);
+                if (pFound.sexo.equalsIgnoreCase("masculino")) {
+                    cbxSexo.setSelectedIndex(1);
+                } else {
+                    cbxSexo.setSelectedIndex(2);
+                }
+                txtSueldo.setText(pFound.sueldo + "");
+                // habilitamos los demas objetos
+                habilitar();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Empleado con código " + cod + ", no encontrado.", "ATENCIÓN",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+        }
     }// GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
