@@ -168,7 +168,7 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
         }
 
         // colocando la informacion en los campos respectivos
-        txtEmpleadoMayorSueldo.setText(acum);
+        txtEmpleadoMayorSueldo.setText(nom);
         // dandole formato al documento
         DecimalFormat df2 = new DecimalFormat("####.00");
         acum = df2.format(suma);
@@ -614,6 +614,19 @@ public class frmRegistrosPilas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardaeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGuardaeActionPerformed
+
+        // capturan la informacion de los objetos
+        String cod = txtCodigo.getText();
+        String nom = txtNombres.getText();
+        String ape = txtApellidos.getText();
+        String sex = cbxSexo.getSelectedItem().toString();
+        float suel = Float.parseFloat(txtSueldo.getText());
+
+        // creando el nodo de la lista en memoria y colocando la informacion
+        push(cod, nom, ape, sex, suel);
+        limpiarEntradas();
+        verDatos();
+        resumen();
 
     }// GEN-LAST:event_btnGuardaeActionPerformed
 
