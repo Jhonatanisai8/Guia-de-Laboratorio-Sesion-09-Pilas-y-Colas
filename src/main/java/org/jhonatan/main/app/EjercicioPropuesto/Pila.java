@@ -167,9 +167,9 @@ public class Pila {
         }
 
         DecimalFormat df2 = new DecimalFormat("####.00");
-        txtMontoComisiones.setText(df2.format(sumaComisiones));
-        txtmontoDescuentoImpuesto.setText(df2.format(sumaDescImpuestos));
-        txtMontoSueldos.setText(df2.format(sumaSueldos));
-        txtmontoDescuentoSeguro.setText(df2.format(sumDescSeguro));
+        txtMontoComisiones.setText("S/."+df2.format(sumaComisiones));
+        txtmontoDescuentoImpuesto.setText("S/."+df2.format(sumaDescImpuestos));
+        txtMontoSueldos.setText("S/."+df2.format(sumaSueldos));
+        txtmontoDescuentoSeguro.setText("S/."+df2.format(sumDescSeguro));
     }
 }
