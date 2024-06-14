@@ -16,6 +16,7 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
             "Nº de hijos", "Suel. Neto", "Mon.Comsiones", "Mon.Desc Imps", "Mon.Desc Seg" };
     String data[][] = {};
     Pila pila = new Pila();
+    Empleado miEmpleado;
 
     public frmRegistroEmpleadoPila() {
         initComponents();
@@ -531,7 +532,7 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
         float sueldoNeto;
 
         // objeto de la clase empleado
-        Empleado miEmpleado = new Empleado(nombre, aPaterno, aMaterno, sueldoBase, ventasRelizadas, estadoCivil,
+        miEmpleado = new Empleado(nombre, aPaterno, aMaterno, sueldoBase, ventasRelizadas, estadoCivil,
                 numeroHijos);
         miEmpleado.setSueldoNeto(miEmpleado.montoSueldoNeto());
 
@@ -544,7 +545,33 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
     }
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
+        if (pila.estVacia()) {
+            JOptionPane.showMessageDialog(rootPane, "!La pila esta vacia", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Nodo aux = pila.buscar(txtNombres.getText());
+            String nombre = txtNombres.getText();
+            String aPaterno = txtApePaterno.getText();
+            String aMaterno = txtApeMaterno.getText();
+            float sueldoBase = Float.parseFloat(txtSueldoBase.getText());
+            int ventasRelizadas = Integer.parseInt(txtVentasRelizadas.getText());
+            String estadoCivil = cbxEstadoCivil.getSelectedItem().toString();
+            int numeroHijos = Integer.parseInt(txtNumHijos.getText());
+            float sueldoNeto;
+            aux.getEmpleado().setNombre(nombre);
+            aux.getEmpleado().setaPaterno(aPaterno);
+            aux.getEmpleado().setaMaterno(aMaterno);
+            aux.getEmpleado().setSueldoBase(sueldoBase);
+            aux.getEmpleado().setVentasRelizadas(ventasRelizadas);
+            aux.getEmpleado().setEstadoCivil(estadoCivil);
+            aux.getEmpleado().setNumeroHijos(numeroHijos);
+            aux.getEmpleado().setSueldoNeto(aux.getEmpleado().montoSueldoNeto());
 
+            limpiarEntradas();
+            desabilitar();
+            pila.verDatos(tblDatos, miModelo);
+            pila.resumen(txtMontoComisiones, txtMontoDescImpuestos, txtMontoDescSeguro, txtMontoSueldos);
+            System.out.println("Empleado modificado");
+        }
     }
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
@@ -567,7 +594,7 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
                     txtNumHijos.setText(aux.getEmpleado().getNumeroHijos() + "");
                     txtSueldoBase.setText(aux.getEmpleado().getSueldoBase() + "");
                     txtVentasRelizadas.setText(aux.getEmpleado().getVentasRelizadas() + "");
-                    txtSueldoNeto.setText(aux.getEmpleado().getSueldoBase() + "");
+                    txtSueldoNeto.setText(aux.getEmpleado().getSueldoNeto() + "");
                     if (aux.getEmpleado().getEstadoCivil().equalsIgnoreCase("casado")) {
                         cbxEstadoCivil.setSelectedIndex(1);
                     } else {
@@ -593,8 +620,8 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
     }
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_btnEliminarActionPerformed
+
+    }
 
     /**
      * @param args the command line arguments
