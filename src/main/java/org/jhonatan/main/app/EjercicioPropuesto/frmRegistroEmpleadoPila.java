@@ -1,5 +1,7 @@
 package org.jhonatan.main.app.EjercicioPropuesto;
 
+import javax.swing.table.DefaultTableModel;
+
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialPalenightIJTheme;
 
 /**
@@ -7,16 +9,20 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialPaleni
  * @author Jhonatan
  */
 public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
-
-    /**
-     * Creates new form frmRegistroEmpleadoPila
-     */
+    // declaracion de variables locales
+    DefaultTableModel miModelo;
+    String cabezera[] = { "Nombres", "Ape. Paterno", "Ape. Materno", "Suel. Base", "Vent. Relia", "Est. Civil",
+            "Nº de hijos", "Suel. Neto", "Mon.Comsiones", "Mon.Desc Imps", "Mon.Desc Seg" };
+    String data[][] = {};
     Pila pila = new Pila();
 
     public frmRegistroEmpleadoPila() {
         initComponents();
         FlatMaterialPalenightIJTheme.setup();
         this.setTitle("Bienvenido al Sistema");
+        miModelo = new DefaultTableModel(data, cabezera);
+        tblDatos.setModel(miModelo);
+        desabilitar();
     }
 
     private void habilitar() {
@@ -29,7 +35,7 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
         btnGuardae.setEnabled(true);
     }
 
-    private void limpiarEntradas(){
+    private void limpiarEntradas() {
         String m = "";
         txtApeMaterno.setText(m);
         txtApePaterno.setText(m);
