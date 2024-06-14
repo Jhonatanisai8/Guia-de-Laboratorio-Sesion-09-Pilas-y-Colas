@@ -599,6 +599,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMontoSueldos">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SimHei" size="18" style="1"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
@@ -606,8 +611,18 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMontoComisiones">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SimHei" size="18" style="1"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMontoDescImpuestos">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SimHei" size="18" style="1"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
@@ -620,6 +635,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMontoDescSeguro">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SimHei" size="18" style="1"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
