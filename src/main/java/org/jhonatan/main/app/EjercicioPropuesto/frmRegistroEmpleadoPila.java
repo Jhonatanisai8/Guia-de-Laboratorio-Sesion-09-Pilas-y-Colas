@@ -28,11 +28,13 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
     private void habilitar() {
         btnActualizar.setEnabled(true);
         btnGuardae.setEnabled(false);
+        txtSueldoNeto.setEnabled(false);
     }
 
     private void desabilitar() {
         btnActualizar.setEnabled(false);
         btnGuardae.setEnabled(true);
+        txtSueldoNeto.setEnabled(false);
     }
 
     private void limpiarEntradas() {
@@ -518,12 +520,31 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardaeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGuardaeActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_btnGuardaeActionPerformed
+        String nombre = txtNombres.getText();
+        String aPaterno = txtApePaterno.getText();
+        String aMaterno = txtApeMaterno.getText();
+        float sueldoBase = Float.parseFloat(txtSueldoBase.getText());
+        int ventasRelizadas = Integer.parseInt(txtVentasRelizadas.getText());
+        String estadoCivil = cbxEstadoCivil.getSelectedItem().toString();
+        int numeroHijos = Integer.parseInt(txtNumHijos.getText());
+        float sueldoNeto;
+
+        // objeto de la clase empleado
+        Empleado miEmpleado = new Empleado(nombre, aPaterno, aMaterno, sueldoBase, ventasRelizadas, estadoCivil,
+                numeroHijos);
+        miEmpleado.setSueldoNeto(miEmpleado.montoSueldoNeto());
+
+        // llamando a los metodos de la clase pila
+        pila.push(miEmpleado);
+        limpiarEntradas();
+        pila.verDatos(tblDatos, miModelo);
+        pila.resumen(txtMontoComisiones, txtMontoDescImpuestos, txtMontoDescSeguro, txtMontoSueldos);
+        System.out.println("Empleado registrado");
+    }
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_btnActualizarActionPerformed
+       
+    }
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
