@@ -1,5 +1,6 @@
 package org.jhonatan.main.app.EjercicioPropuesto;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialPalenightIJTheme;
@@ -543,12 +544,43 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
     }
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
-       
+
     }
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
-
-        
+        if (pila.estVacia()) {
+            JOptionPane.showMessageDialog(rootPane, "!La pila esta vacia", "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+        } else {
+            String nombre = txtNombres.getText();
+            if (nombre.equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(rootPane, "!Por favor ingresar el nombre a buscar", "ATENCIÓN",
+                        JOptionPane.WARNING_MESSAGE);
+            } else {
+                // lamando al metodo que retorna la pisicion del dato buscado
+                // variable auxiliar
+                Nodo aux = pila.buscar(nombre);
+                // verificando el puntero
+                if (aux != null) {
+                    txtNombres.setText(aux.getEmpleado().getNombre());
+                    txtApePaterno.setText(aux.getEmpleado().getaPaterno());
+                    txtApeMaterno.setText(aux.getEmpleado().getaMaterno());
+                    txtNumHijos.setText(aux.getEmpleado().getNumeroHijos() + "");
+                    txtSueldoBase.setText(aux.getEmpleado().getSueldoBase() + "");
+                    txtVentasRelizadas.setText(aux.getEmpleado().getVentasRelizadas() + "");
+                    txtSueldoNeto.setText(aux.getEmpleado().getSueldoBase() + "");
+                    if (aux.getEmpleado().getEstadoCivil().equalsIgnoreCase("casado")) {
+                        cbxEstadoCivil.setSelectedIndex(1);
+                    } else {
+                        cbxEstadoCivil.setSelectedIndex(2);
+                    }
+                    System.out.println("encontrado");
+                    habilitar();
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Empleado con nombre " + nombre + ", no encontrado.",
+                            "ATENCIÓN", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        }
     }
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
