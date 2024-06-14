@@ -20,7 +20,7 @@ public class Pila {
     }
 
     public Nodo buscar(String nombres) {
-        Nodo pos = null;
+        Nodo pos = tope;
         while (pos != null && !nombres.equalsIgnoreCase(pos.getEmpleado().getNombre())) {
             pos = pos.sig;
         }
