@@ -29,7 +29,18 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
         btnGuardae.setEnabled(true);
     }
 
-    
+    private void limpiarEntradas(){
+        String m = "";
+        txtApeMaterno.setText(m);
+        txtApePaterno.setText(m);
+        txtNombres.setText(m);
+        txtNumHijos.setText(m);
+        txtSueldoBase.setText(m);
+        txtVentasRelizadas.setText(m);
+        cbxEstadoCivil.setSelectedIndex(0);
+        txtNombres.requestFocus();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
