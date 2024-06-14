@@ -547,8 +547,9 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
     }
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_btnConsultarActionPerformed
+
+        
+    }
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
