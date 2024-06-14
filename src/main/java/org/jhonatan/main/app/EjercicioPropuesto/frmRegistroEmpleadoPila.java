@@ -49,6 +49,7 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
                 txtVentasRelizadas.setText(m);
                 cbxEstadoCivil.setSelectedIndex(0);
                 txtNombres.requestFocus();
+                txtSueldoNeto.setText(m);
         }
 
         /**
