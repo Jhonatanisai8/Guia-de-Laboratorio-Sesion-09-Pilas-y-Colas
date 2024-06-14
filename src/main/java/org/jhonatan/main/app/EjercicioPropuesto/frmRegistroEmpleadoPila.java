@@ -19,6 +19,16 @@ public class frmRegistroEmpleadoPila extends javax.swing.JFrame {
         this.setTitle("Bienvenido al Sistema");
     }
 
+    private void habilitar() {
+        btnActualizar.setEnabled(true);
+        btnGuardae.setEnabled(false);
+    }
+
+    private void desabilitar() {
+        btnActualizar.setEnabled(false);
+        btnGuardae.setEnabled(true);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
