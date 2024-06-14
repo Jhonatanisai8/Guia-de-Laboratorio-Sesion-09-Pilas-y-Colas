@@ -1,4 +1,4 @@
-package org.jhonatan.main.app.EjercicioPropuesto;
+package org.jhonatan.main.app.EjercicioPropuestoPilas;
 
 public class Nodo {
     private Empleado empleado;

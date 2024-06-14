@@ -1,4 +1,4 @@
-package org.jhonatan.main.app.EjercicioPropuesto;
+package org.jhonatan.main.app.EjercicioPropuestoPilas;
 
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;

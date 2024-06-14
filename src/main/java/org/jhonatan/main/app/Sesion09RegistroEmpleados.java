@@ -1,6 +1,6 @@
 package org.jhonatan.main.app;
 
-import org.jhonatan.main.app.EjercicioPropuesto.frmRegistroEmpleadoPila;
+import org.jhonatan.main.app.EjercicioPropuestoPilas.frmRegistroEmpleadoPila;
 import org.jhonatan.main.app.formularios.frmRegistroColas;
 import org.jhonatan.main.app.formularios.frmRegistrosPilas;
 

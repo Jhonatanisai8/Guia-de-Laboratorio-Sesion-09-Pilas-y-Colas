@@ -1,4 +1,4 @@
-package org.jhonatan.main.app.EjercicioPropuesto;
+package org.jhonatan.main.app.EjercicioPropuestoPilas;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
