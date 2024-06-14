@@ -19,8 +19,8 @@ public class Pila {
         this.tope = null;
     }
 
-    public Nodo buscar(Nodo tope, String nombres) {
-        Nodo pos = tope;
+    public Nodo buscar(String nombres) {
+        Nodo pos = null;
         while (pos != null && !nombres.equalsIgnoreCase(pos.getEmpleado().getNombre())) {
             pos = pos.sig;
         }
