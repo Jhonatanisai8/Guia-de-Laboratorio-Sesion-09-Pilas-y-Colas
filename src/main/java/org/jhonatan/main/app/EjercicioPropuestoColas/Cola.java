@@ -50,4 +50,16 @@ public class Cola {
 
     }
 
+    public void encolar(Empleado empleado) {
+        Nodo nuevo = new Nodo(empleado);
+        // realizando los enlaces correspondientes
+        if (frente == null) {
+            frente = nuevo;
+        } else {
+            finCola.sig = nuevo;
+        }
+        finCola = nuevo;
+        finCola.sig = null;
+    }
+
 }
