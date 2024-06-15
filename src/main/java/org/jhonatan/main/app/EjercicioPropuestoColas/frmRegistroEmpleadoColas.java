@@ -22,6 +22,34 @@ public class frmRegistroEmpleadoColas extends javax.swing.JFrame {
         initComponents();
         FlatMaterialLighterIJTheme.setup();
         this.setTitle("Bienvenido al Sistema");
+        miModelo = new DefaultTableModel(data, cabezera);
+        tblDatos.setModel(miModelo);
+        desabilitar();
+    }
+
+    private void habilitar() {
+        btnActualizar.setEnabled(true);
+        btnGuardae.setEnabled(false);
+        txtSueldoNeto.setEnabled(false);
+    }
+
+    private void desabilitar() {
+        btnActualizar.setEnabled(false);
+        btnGuardae.setEnabled(true);
+        txtSueldoNeto.setEnabled(false);
+    }
+
+    private void limpiarEntradas() {
+        String m = "";
+        txtApeMaterno.setText(m);
+        txtApePaterno.setText(m);
+        txtNombres.setText(m);
+        txtNumHijos.setText(m);
+        txtSueldoBase.setText(m);
+        txtVentasRelizadas.setText(m);
+        cbxEstadoCivil.setSelectedIndex(0);
+        txtNombres.requestFocus();
+        txtSueldoNeto.setText(m);
     }
 
     @SuppressWarnings("unchecked")
