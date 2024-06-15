@@ -527,6 +527,26 @@ public class frmRegistroEmpleadoColas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardaeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnGuardaeActionPerformed
+        String nombre = txtNombres.getText();
+        String aPaterno = txtApePaterno.getText();
+        String aMaterno = txtApeMaterno.getText();
+        float sueldoBase = Float.parseFloat(txtSueldoBase.getText());
+        int ventasRelizadas = Integer.parseInt(txtVentasRelizadas.getText());
+        String estadoCivil = cbxEstadoCivil.getSelectedItem().toString();
+        int numeroHijos = Integer.parseInt(txtNumHijos.getText());
+        float sueldoNeto;
+
+        // objeto de la clase empleado
+        miEmpleado = new Empleado(nombre, aPaterno, aMaterno, sueldoBase, ventasRelizadas, estadoCivil,
+                numeroHijos);
+        miEmpleado.setSueldoNeto(miEmpleado.montoSueldoNeto());
+        
+        // llamando a los metodos de la clase pila
+        cola.encolar(miEmpleado);
+        limpiarEntradas();
+        cola.verDatos(tblDatos, miModelo);
+        cola.resumen(txtMontoComisiones, txtMontoDescImpuestos, txtMontoDescSeguro, txtMontoSueldos);
+        System.out.println("Empleado registrado");
     }
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
