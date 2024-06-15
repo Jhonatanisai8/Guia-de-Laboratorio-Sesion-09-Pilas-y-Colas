@@ -1,5 +1,6 @@
 package org.jhonatan.main.app.EjercicioPropuestoColas;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
@@ -540,7 +541,7 @@ public class frmRegistroEmpleadoColas extends javax.swing.JFrame {
         miEmpleado = new Empleado(nombre, aPaterno, aMaterno, sueldoBase, ventasRelizadas, estadoCivil,
                 numeroHijos);
         miEmpleado.setSueldoNeto(miEmpleado.montoSueldoNeto());
-        
+
         // llamando a los metodos de la clase pila
         cola.encolar(miEmpleado);
         limpiarEntradas();
@@ -550,6 +551,34 @@ public class frmRegistroEmpleadoColas extends javax.swing.JFrame {
     }
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnActualizarActionPerformed
+        if (cola.estaVacia()) {
+            JOptionPane.showMessageDialog(rootPane, "!La cola esta vacia", "ATENCIÓN",
+                    JOptionPane.WARNING_MESSAGE);
+        } else {
+            Nodo aux = cola.buscar(txtNombres.getText());
+            String nombre = txtNombres.getText();
+            String aPaterno = txtApePaterno.getText();
+            String aMaterno = txtApeMaterno.getText();
+            float sueldoBase = Float.parseFloat(txtSueldoBase.getText());
+            int ventasRelizadas = Integer.parseInt(txtVentasRelizadas.getText());
+            String estadoCivil = cbxEstadoCivil.getSelectedItem().toString();
+            int numeroHijos = Integer.parseInt(txtNumHijos.getText());
+            float sueldoNeto;
+            aux.getEmpleado().setNombre(nombre);
+            aux.getEmpleado().setaPaterno(aPaterno);
+            aux.getEmpleado().setaMaterno(aMaterno);
+            aux.getEmpleado().setSueldoBase(sueldoBase);
+            aux.getEmpleado().setVentasRelizadas(ventasRelizadas);
+            aux.getEmpleado().setEstadoCivil(estadoCivil);
+            aux.getEmpleado().setNumeroHijos(numeroHijos);
+            aux.getEmpleado().setSueldoNeto(aux.getEmpleado().montoSueldoNeto());
+
+            limpiarEntradas();
+            desabilitar();
+            cola.verDatos(tblDatos, miModelo);
+            cola.resumen(txtMontoComisiones, txtMontoDescImpuestos, txtMontoDescSeguro, txtMontoSueldos);
+            System.out.println("Empleado modificado");
+        }
 
     }
 
