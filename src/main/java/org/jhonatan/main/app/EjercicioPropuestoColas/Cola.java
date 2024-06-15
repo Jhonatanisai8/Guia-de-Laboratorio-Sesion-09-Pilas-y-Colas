@@ -159,4 +159,8 @@ public class Cola {
         txtMontoSueldos.setText("S/." + df2.format(sumaSueldos));
         txtmontoDescuentoSeguro.setText("S/." + df2.format(sumDescSeguro));
     }
+
+    public boolean estaVacia() {
+        return finCola == null;
+    }
 }
