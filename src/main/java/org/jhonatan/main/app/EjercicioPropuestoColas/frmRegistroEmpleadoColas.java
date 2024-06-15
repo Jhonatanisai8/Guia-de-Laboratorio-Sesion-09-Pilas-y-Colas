@@ -631,7 +631,23 @@ public class frmRegistroEmpleadoColas extends javax.swing.JFrame {
     }
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEliminarActionPerformed
-
+        if (cola.estaVacia()) {
+            JOptionPane.showMessageDialog(rootPane, "!La pila esta vacia", "ATENCIÓN",
+                    JOptionPane.WARNING_MESSAGE);
+            txtNombres.requestFocus();
+        } else {
+            String dato = cola.pop();
+            cola.mensaje(dato);
+            limpiarEntradas();
+            cola.verDatos(tblDatos, miModelo);
+            if (cola.estaVacia()) {
+                JOptionPane.showMessageDialog(rootPane, "!La pila esta vacia", "ATENCIÓN",
+                        JOptionPane.WARNING_MESSAGE);
+                txtNombres.requestFocus();
+            }
+            desabilitar();
+            cola.resumen(txtMontoComisiones, txtMontoDescImpuestos, txtMontoDescSeguro, txtMontoSueldos);
+        }
     }
 
     public static void main(String args[]) {
