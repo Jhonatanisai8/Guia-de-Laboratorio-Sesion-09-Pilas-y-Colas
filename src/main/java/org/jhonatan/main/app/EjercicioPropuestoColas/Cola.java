@@ -62,4 +62,24 @@ public class Cola {
         finCola.sig = null;
     }
 
+    public String pop() {
+        String eliminado = "";
+        Nodo aux = frente;
+        // extraemos los datos
+        // atributos
+        String nombre = aux.getEmpleado().getNombre();
+        String aPaterno = aux.getEmpleado().getaPaterno();
+        String aMaterno = aux.getEmpleado().getaMaterno();
+        float sueldoBase = aux.getEmpleado().getSueldoBase();
+        int ventasRelizadas = aux.getEmpleado().getVentasRelizadas();
+        String estadoCivil = aux.getEmpleado().getEstadoCivil();
+        int numeroHijos = aux.getEmpleado().getNumeroHijos();
+        float sueldoNeto = aux.getEmpleado().getSueldoNeto();
+
+        eliminado = nombre + "," + aPaterno + "," + aMaterno + "," + String.valueOf(sueldoBase) + ","
+                + String.valueOf(ventasRelizadas) +
+                "," + estadoCivil + "," + String.valueOf(numeroHijos) + "," + String.valueOf(sueldoNeto);
+        frente = frente.sig;
+        return eliminado;
+    }
 }
