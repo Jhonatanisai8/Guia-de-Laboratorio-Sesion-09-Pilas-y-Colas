@@ -622,7 +622,12 @@ public class frmRegistroEmpleadoColas extends javax.swing.JFrame {
     }
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSalirActionPerformed
-
+        int opcion;
+        opcion = JOptionPane.showConfirmDialog(rootPane, "¿Estas seguro de salir?", "ATENCIÓN",
+                JOptionPane.INFORMATION_MESSAGE);
+        if (opcion == 0) {
+            System.exit(0);
+        }
     }
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEliminarActionPerformed
