@@ -1,8 +1,11 @@
 package org.jhonatan.main.app.EjercicioPropuestoColas;
 
+import java.text.DecimalFormat;
 import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Cola {
     // variables
@@ -82,4 +85,57 @@ public class Cola {
         frente = frente.sig;
         return eliminado;
     }
+
+    public void vaciarTabla(JTable tblDatos, DefaultTableModel miModelo) {
+        int filas = tblDatos.getRowCount();
+        for (int i = 0; i < filas; i++) {
+            miModelo.removeRow(0);
+        }
+    }
+
+    public void verDatos(JTable tblDatos, DefaultTableModel miModelo) {
+        // atributos
+        String nombre;
+        String aPaterno;
+        String aMaterno;
+        float sueldoBase;
+        int ventasRelizadas;
+        String estadoCivil;
+        int numeroHijos;
+        String sueldoNeto;
+        String montoComision;
+        String montoDescuentoImpuesto;
+        String montoDescuentoSeguro;
+
+        Nodo aux = frente;
+        vaciarTabla(tblDatos, miModelo);
+
+        while (aux != null) {
+            nombre = aux.getEmpleado().getNombre();
+            nombre = aux.getEmpleado().getNombre();
+            aPaterno = aux.getEmpleado().getaPaterno();
+            aMaterno = aux.getEmpleado().getaMaterno();
+            sueldoBase = aux.getEmpleado().getSueldoBase();
+
+            // dando formato al variable de tipo float
+            DecimalFormat df2 = new DecimalFormat("####.00");
+
+            ventasRelizadas = aux.getEmpleado().getVentasRelizadas();
+            estadoCivil = aux.getEmpleado().getEstadoCivil();
+            numeroHijos = aux.getEmpleado().getNumeroHijos();
+            sueldoNeto = df2.format(aux.getEmpleado().getSueldoNeto());
+            montoComision = df2.format(aux.getEmpleado().montoComision());
+            montoDescuentoImpuesto = df2.format(aux.getEmpleado().montoDescuentoImpuesto());
+            montoDescuentoSeguro = df2.format(aux.getEmpleado().montoDescuentoSeguro());
+
+            Object fila[] = { nombre, aPaterno, aMaterno, sueldoBase, ventasRelizadas, estadoCivil, numeroHijos,
+                    sueldoNeto, montoComision, montoDescuentoImpuesto, montoDescuentoSeguro };
+
+            miModelo.addRow(fila);
+            aux = aux.sig;
+
+        }
+    }
+
+    
 }
